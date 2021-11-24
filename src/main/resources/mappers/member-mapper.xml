@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="Member">
+	<resultMap type="Member" id="memberResultSet">
+		<id property="member_Id" column="member_Id" />
+		<result property="member_pwd" column="member_pwd" />
+		<result property="member_nm" column="member_nm" />
+		<result property="member_enroll_dt" column="member_enroll_dt" />
+
+	</resultMap>
+	
+	<select id="idCheck" resultType="int">
+		select count(*) from member where member_id = #{member_id}
+	</select>
+</mapper>
